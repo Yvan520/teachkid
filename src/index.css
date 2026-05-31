@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Baloo 2", "Noto Sans TC", sans-serif;
+  --font-round: "Fredoka", "Noto Sans TC", sans-serif;
+  --font-body: "Noto Sans TC", "Fredoka", sans-serif;
+
+  --color-cream: #fff9f0;
+  --color-peach: #ffb4a2;
+  --color-coral: #ff8a7a;
+  --color-sky: #8ecdf0;
+  --color-mint: #95e1c8;
+  --color-grape: #b8a4f0;
+  --color-sun: #ffd166;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: #fff9f0;
+  color: #4a3f55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ===== Animations ===== */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-22px) rotate(6deg); }
+}
+@keyframes float-mid {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(-5deg); }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
+}
+@keyframes blob {
+  0%, 100% { border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%; }
+  50% { border-radius: 60% 40% 34% 66% / 60% 56% 44% 40%; }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes pop-in {
+  0% { opacity: 0; transform: translateY(28px) scale(.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(.9); opacity: .7; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
+.animate-float-mid { animation: float-mid 5.5s ease-in-out infinite; }
+.animate-bob { animation: bob 3s ease-in-out infinite; }
+.animate-wiggle { animation: wiggle 3.5s ease-in-out infinite; }
+.animate-blob { animation: blob 12s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 26s linear infinite; }
+
+.reveal {
+  opacity: 0;
+}
+.reveal.in {
+  animation: pop-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, #ff8a7a, #ffd166, #95e1c8, #8ecdf0, #b8a4f0, #ff8a7a);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: #fff1e6; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ffb4a2, #b8a4f0);
+  border-radius: 99px;
+  border: 3px solid #fff1e6;
+}
