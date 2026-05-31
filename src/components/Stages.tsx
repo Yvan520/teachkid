@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { stages } from "../data";
 import { SectionTag } from "./Philosophy";
 
@@ -107,6 +108,13 @@ export default function Stages() {
               </div>
             ))}
           </div>
+
+          <Link
+            to={`/stages/${stage.slug}`}
+            className="relative mt-6 inline-flex items-center gap-2 rounded-full bg-white/90 px-6 py-3 font-display text-sm font-bold text-[#3f3550] shadow-md transition hover:bg-white hover:gap-3"
+          >
+            詳細了解 {stage.age} {stage.title} →
+          </Link>
         </div>
       </div>
     </section>

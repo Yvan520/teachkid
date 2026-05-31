@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { growFoods } from "../data";
 import { SectionTag } from "./Philosophy";
 
@@ -33,17 +34,21 @@ export default function Nutrition() {
 
             <div className="reveal mt-8 grid gap-3 sm:grid-cols-2">
               {growFoods.map((f, i) => (
-                <div
+                <Link
                   key={f.name}
+                  to={`/nutrition/${f.slug}`}
                   className="reveal group flex items-start gap-3 rounded-2xl bg-cream p-4 ring-1 ring-black/5 transition hover:-translate-y-1 hover:bg-peach/10 hover:shadow-lg"
                   data-delay={`${i * 70}ms`}
                 >
                   <span className="text-3xl transition group-hover:scale-125">{f.emoji}</span>
-                  <div>
+                  <div className="flex-1">
                     <p className="font-display font-extrabold text-[#3f3550]">{f.name}</p>
                     <p className="text-sm leading-snug text-[#75687f]">{f.benefit}</p>
+                    <span className="mt-1 inline-block text-xs font-bold text-coral opacity-0 transition group-hover:opacity-100">
+                      詳細了解 →
+                    </span>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

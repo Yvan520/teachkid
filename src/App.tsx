@@ -20,6 +20,15 @@ import Vygotsky from "./pages/philosophy/vygotsky";
 import Reggio from "./pages/philosophy/reggio";
 import Sun from "./pages/philosophy/sun";
 import Holistic from "./pages/philosophy/holistic";
+import BabyStage from "./pages/stages/baby-stage";
+import KidStage from "./pages/stages/kid-stage";
+import JuniorStage from "./pages/stages/junior-stage";
+import MilkCalcium from "./pages/nutrition/milk-calcium";
+import EggProtein from "./pages/nutrition/egg-protein";
+import RiceEnergy from "./pages/nutrition/rice-energy";
+import VegFiber from "./pages/nutrition/veg-fiber";
+import FruitVitamin from "./pages/nutrition/fruit-vitamin";
+import FishGoodFat from "./pages/nutrition/fish-good-fat";
 
 export default function App() {
   return (
@@ -45,6 +54,15 @@ export default function App() {
       <Route path="/philosophy/reggio" element={<Reggio />} />
       <Route path="/philosophy/sun" element={<Sun />} />
       <Route path="/philosophy/holistic" element={<Holistic />} />
+      <Route path="/stages/baby-stage" element={<BabyStage />} />
+      <Route path="/stages/kid-stage" element={<KidStage />} />
+      <Route path="/stages/junior-stage" element={<JuniorStage />} />
+      <Route path="/nutrition/milk-calcium" element={<MilkCalcium />} />
+      <Route path="/nutrition/egg-protein" element={<EggProtein />} />
+      <Route path="/nutrition/rice-energy" element={<RiceEnergy />} />
+      <Route path="/nutrition/veg-fiber" element={<VegFiber />} />
+      <Route path="/nutrition/fruit-vitamin" element={<FruitVitamin />} />
+      <Route path="/nutrition/fish-good-fat" element={<FishGoodFat />} />
     </Routes>
   );
 }

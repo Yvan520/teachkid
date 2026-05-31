@@ -53,6 +53,7 @@ export const philosophies: Philosophy[] = [
 
 export type Stage = {
   id: string;
+  slug: string;
   age: string;
   title: string;
   emoji: string;
@@ -66,6 +67,7 @@ export type Stage = {
 export const stages: Stage[] = [
   {
     id: "baby",
+    slug: "baby-stage",
     age: "0 – 3 歲",
     title: "感官萌芽期",
     emoji: "🍼",
@@ -89,6 +91,7 @@ export const stages: Stage[] = [
   },
   {
     id: "kid",
+    slug: "kid-stage",
     age: "3 – 6 歲",
     title: "想像力爆發期",
     emoji: "🎨",
@@ -112,6 +115,7 @@ export const stages: Stage[] = [
   },
   {
     id: "junior",
+    slug: "junior-stage",
     age: "6 – 10 歲",
     title: "能力建構期",
     emoji: "🚀",
@@ -139,13 +143,14 @@ export type Food = {
   emoji: string;
   name: string;
   benefit: string;
+  slug: string;
 };
 
 export const growFoods: Food[] = [
-  { emoji: "🥛", name: "奶同乳製品", benefit: "鈣質 × 蛋白質，骨骼長度同密度嘅基石" },
-  { emoji: "🥚", name: "雞蛋", benefit: "優質蛋白同膽鹼，肌肉同大腦同步發育" },
-  { emoji: "🐟", name: "深海魚", benefit: "Omega-3 同維生素 D，幫手吸收鈣質、保護視力" },
-  { emoji: "🥦", name: "深綠色蔬菜", benefit: "鎂、鉀同維生素 K，骨骼新陳代謝好幫手" },
-  { emoji: "🥜", name: "堅果豆類", benefit: "鋅同植物蛋白，促進生長同免疫力" },
-  { emoji: "🍊", name: "新鮮生果", benefit: "維生素 C 幫手合成膠原蛋白，令骨骼更強韌" },
+  { emoji: "🥛", name: "奶同乳製品", benefit: "鈣質 × 蛋白質，骨骼長度同密度嘅基石", slug: "milk-calcium" },
+  { emoji: "🥚", name: "雞蛋", benefit: "優質蛋白同膽鹼，肌肉同大腦同步發育", slug: "egg-protein" },
+  { emoji: "🐟", name: "深海魚", benefit: "Omega-3 同維生素 D，幫手吸收鈣質、保護視力", slug: "fish-good-fat" },
+  { emoji: "🥦", name: "深綠色蔬菜", benefit: "鎂、鉀同維生素 K，骨骼新陳代謝好幫手", slug: "veg-fiber" },
+  { emoji: "🍚", name: "飯麵主食", benefit: "優質澱粉質提供每日跑跳玩嘅充足能量", slug: "rice-energy" },
+  { emoji: "🍊", name: "新鮮生果", benefit: "維生素 C 幫手合成膠原蛋白，令骨骼更強韌", slug: "fruit-vitamin" },
 ];
