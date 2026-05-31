@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import ScrollToTop from "./ScrollToTop";
 import Home from "./pages/Home";
 import ParentSchool from "./pages/parent-school/index";
 import Emotion from "./pages/parent-school/emotion";
@@ -32,7 +33,9 @@ import FishGoodFat from "./pages/nutrition/fish-good-fat";
 
 export default function App() {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/parent-school" element={<ParentSchool />} />
       <Route path="/parent-school/emotion" element={<Emotion />} />
@@ -64,5 +67,6 @@ export default function App() {
       <Route path="/nutrition/fruit-vitamin" element={<FruitVitamin />} />
       <Route path="/nutrition/fish-good-fat" element={<FishGoodFat />} />
     </Routes>
+    </>
   );
 }
