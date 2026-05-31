@@ -11,49 +11,107 @@ export default function EggProtein() {
     >
       <h1>🥚 雞蛋 & 蛋白質</h1>
       <p className="lead">
-        蛋白質係建造同修復身體組織嘅基本材料——肌肉、骨骼、皮膚、頭髮都需要蛋白質。對生長發育期嘅小朋友嚟講，每日充足嘅蛋白質攝取好重要。
+        蛋白質係建造同修復身體組織嘅基本材料——肌肉、骨骼、皮膚、頭髮都需要蛋白質。
+        對生長發育期嘅小朋友嚟講，每日充足嘅蛋白質攝取好重要。
       </p>
 
-      <h2>📊 每日蛋白質需要量</h2>
-      <ul>
-        <li>1–3 歲：約 20g 蛋白質</li>
-        <li>4–6 歲：約 25g 蛋白質</li>
-        <li>7–10 歲：約 30g 蛋白質</li>
-      </ul>
+      {/* 每日需要量 */}
+      <div className="mt-10 rounded-3xl bg-gradient-to-br from-sun/10 to-peach/10 p-7 shadow-sm ring-1 ring-black/5">
+        <h2 className="flex items-center gap-2">
+          <span className="text-2xl">📊</span> 每日蛋白質需要量
+        </h2>
+        <div className="mt-6 grid gap-3 sm:grid-cols-4">
+          {[
+            { age: "1–3 歲", g: "20g", note: "≈ 3 隻蛋" },
+            { age: "4–6 歲", g: "25g", note: "≈ 1 杯奶 + 1 份肉" },
+            { age: "7–10 歲", g: "30g", note: "≈ 1 份魚 + 1 份豆腐" },
+            { age: "青春期", g: "↑ 更多", note: "生長高𡶶需要量最高" },
+          ].map((item) => (
+            <div key={item.age} className="rounded-2xl bg-white/80 p-5 text-center backdrop-blur">
+              <p className="font-display text-lg font-extrabold text-[#3f3550]">{item.age}</p>
+              <p className="mt-1 font-display text-2xl font-bold text-coral">{item.g}</p>
+              <p className="mt-1 text-xs text-[#8a7d98]">{item.note}</p>
+            </div>
+          ))}
+        </div>
+      </div>
 
-      <h2>🥇 高蛋白食物營養資料</h2>
-      <ul>
-        <li>🥚 <strong>雞蛋</strong>：1 隻 ≈ 6–7g 蛋白質——最完美嘅蛋白質來源</li>
-        <li>🥛 <strong>牛奶</strong>：1 杯 ≈ 8g 蛋白質</li>
-        <li>🐟 <strong>魚肉</strong>：1 份（約 100g）≈ 20g 蛋白質</li>
-        <li>🐔 <strong>雞肉/豬肉</strong>：1 份 ≈ 20g 蛋白質</li>
-        <li>🫘 <strong>豆腐/豆類</strong>：半磚豆腐 ≈ 10g 蛋白質</li>
-      </ul>
+      {/* 高蛋白食物 */}
+      <div className="mt-10">
+        <h2 className="flex items-center gap-2">
+          <span className="text-2xl">🥇</span> 高蛋白食物營養資料
+        </h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            { emoji: "🥚", name: "雞蛋", detail: "1 隻 ≈ 6–7g 蛋白質——最完美嘅蛋白質來源" },
+            { emoji: "🥛", name: "牛奶", detail: "1 杯 ≈ 8g 蛋白質——鈣質蛋白質同步補充" },
+            { emoji: "🐟", name: "魚肉", detail: "1 份（100g）≈ 20g 蛋白質" },
+            { emoji: "🐔", name: "雞肉/豬肉", detail: "1 份 ≈ 20g 蛋白質" },
+            { emoji: "🫘", name: "豆腐/豆類", detail: "半磚豆腐 ≈ 10g 蛋白質" },
+            { emoji: "🥜", name: "堅果", detail: "每日適量——補充蛋白質同好脂肪" },
+          ].map((food) => (
+            <div
+              key={food.name}
+              className="flex items-start gap-4 rounded-2xl bg-white p-5 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-md"
+            >
+              <span className="text-3xl">{food.emoji}</span>
+              <div>
+                <p className="font-display font-extrabold text-[#3f3550]">{food.name}</p>
+                <p className="mt-1 text-sm text-[#5a4d68]">{food.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
-      <h2>💰 最慳錢嘅蛋白質來源</h2>
-      <ul>
-        <li><strong>雞蛋</strong>：$15–20/盒（10 隻）——每隻約 $1.5–2，CP 值最高</li>
-        <li><strong>豆腐</strong>：$5–8/磚——街市買最平</li>
-        <li><strong>豆漿</strong>：$8–12/盒——加鈣豆漿仲補鈣</li>
-        <li><strong>急凍魚柳</strong>：$20–30/塊——比新鮮魚平好多</li>
-        <li><strong>豬肉碎</strong>：$15–20/斤——蒸肉餅、炒飯都得</li>
-      </ul>
+      {/* 慳錢攻略 */}
+      <div className="mt-10 rounded-3xl bg-gradient-to-br from-sun/10 to-peach/10 p-7 shadow-sm ring-1 ring-black/5">
+        <h2 className="flex items-center gap-2">
+          <span className="text-2xl">💰</span> 最慳錢嘅蛋白質來源
+        </h2>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[
+            { emoji: "🥚", name: "雞蛋", price: "$1.5–2/隻", note: "CP值最高" },
+            { emoji: "🫘", name: "豆腐", price: "$5–8/磚", note: "街市買最平" },
+            { emoji: "🥛", name: "豆漿", price: "$8–12/盒", note: "加鈣豆漿仲補鈣" },
+            { emoji: "🐟", name: "急凍魚柳", price: "$20–30/塊", note: "比新鮮魚平好多" },
+          ].map((item) => (
+            <div
+              key={item.name}
+              className="flex items-center gap-4 rounded-2xl bg-white/80 p-4 backdrop-blur"
+            >
+              <span className="text-3xl">{item.emoji}</span>
+              <div className="flex-1">
+                <p className="font-display font-extrabold text-[#3f3550]">{item.name}</p>
+                <p className="text-sm text-[#5a4d68]">{item.price}</p>
+              </div>
+              <span className="rounded-full bg-coral/10 px-3 py-1 font-display text-xs font-bold text-coral">
+                {item.note}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
 
-      <h2>🍽️ 簡單高蛋白餐單</h2>
-      <ul>
-        <li><strong>早餐</strong>：烚蛋 1 隻 + 牛奶 1 杯</li>
-        <li><strong>午餐</strong>：番茄炒蛋 + 飯</li>
-        <li><strong>下午茶</strong>：豆腐花（少甜）</li>
-        <li><strong>晚餐</strong>：蒸肉餅 + 炒菜</li>
-      </ul>
-
-      <h2>💡 貼士</h2>
-      <ul>
-        <li><strong>蛋黃要食</strong>：膽固醇唔係魔鬼，蛋黃有維他命D同鐵質</li>
-        <li><strong>分散攝取</strong>：每餐都有蛋白質比一餐食大量更好</li>
-        <li><strong>素食小朋友</strong>：豆製品、蛋奶、藜麥、堅果——一樣可以夠 protein</li>
-        <li><strong>唔好過量</strong>：過多蛋白質會增加腎臟負擔——均衡飲食最重要</li>
-      </ul>
+      {/* 餐單 */}
+      <div className="mt-10">
+        <h2 className="flex items-center gap-2">
+          <span className="text-2xl">🍽️</span> 簡單高蛋白餐單
+        </h2>
+        <div className="mt-6 grid gap-3 sm:grid-cols-4">
+          {[
+            { meal: "🥣 早餐", food: "烚蛋1隻 + 牛奶1杯" },
+            { meal: "🍝 午餐", food: "番茄炒蛋 + 飯" },
+            { meal: "🫗 下午茶", food: "豆腐花（少甜）" },
+            { meal: "🥩 晚餐", food: "蒸肉餅 + 炒菜" },
+          ].map((item) => (
+            <div key={item.meal} className="rounded-2xl bg-white p-4 text-center shadow-sm ring-1 ring-black/5">
+              <p className="font-display text-sm font-bold text-coral">{item.meal}</p>
+              <p className="mt-1 text-sm text-[#5a4d68]">{item.food}</p>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <div className="mt-10 rounded-2xl bg-gradient-to-br from-sky/10 to-mint/10 p-6">
         <p className="font-display text-lg font-bold text-[#3f3550]">📌 一句總結</p>
