@@ -22,20 +22,18 @@ export default function FruitVitamin() {
         </h2>
         <div className="mt-6 grid gap-3 sm:grid-cols-4">
           {[
-            { age: "1–3 歲", amount: "½份", note: "½個蘋果/½條蕉" },
-            { age: "4–6 歲", amount: "1 份", note: "1個橙/1條蕉" },
-            { age: "7–10 歲", amount: "1–2 份", note: "逐步增加" },
-            { age: "備註", amount: "1份≈拳頭咁大", note: true },
+            { age: "1–3 歲", amount: "½份", sub: "½個蘋果/½條蕉", highlight: false },
+            { age: "4–6 歲", amount: "1 份", sub: "1個橙/1條蕉", highlight: false },
+            { age: "7–10 歲", amount: "1–2 份", sub: "逐步增加", highlight: false },
+            { age: "備註", amount: "1份≈拳頭咁大", sub: "", highlight: true },
           ].map((item) => (
             <div
               key={item.age}
-              className={`rounded-2xl p-5 text-center ${item.note ? "bg-coral/5" : "bg-white/80"} backdrop-blur`}
+              className={`rounded-2xl p-5 text-center ${item.highlight ? "bg-coral/5" : "bg-white/80"} backdrop-blur`}
             >
               <p className="font-display text-lg font-extrabold text-[#3f3550]">{item.age}</p>
               <p className="mt-1 font-display text-2xl font-bold text-coral">{item.amount}</p>
-              {item.note && !item.note !== undefined && (
-                <p className="mt-1 text-xs text-[#8a7d98]">{item.note}</p>
-              )}
+              {item.sub && <p className="mt-1 text-xs text-[#8a7d98]">{item.sub}</p>}
             </div>
           ))}
         </div>
